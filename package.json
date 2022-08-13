@@ -1,0 +1,50 @@
+{
+  "name": "@oitq/workspaces",
+  "version": "1.0.0",
+  "description": "oitq 工作空间",
+  "main": "index.js",
+  "scripts": {
+    "compile": "ts-node ./build/compile.ts",
+    "dtsc": "ts-node ./build/dtsc.ts",
+    "build": "npm run compile && npm run dtsc",
+    "pub": "ts-node ./build/publish.ts",
+    "dev": "npm run dev -w test",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "adapters/*",
+    "services/*",
+    "plugins/*",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oitq/packages.git"
+  },
+  "keywords": [
+    "oitq",
+    "bot"
+  ],
+  "author": "凉菜",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oitq/packages/issues"
+  },
+  "homepage": "https://github.com/oitq/packages#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.2",
+    "cac": "^6.7.12",
+    "cross-spawn": "^7.0.3",
+    "dtsc": "^2.2.2",
+    "esbuild": "^0.15.1",
+    "fs-extra": "^10.1.0",
+    "json5": "^2.2.1",
+    "kleur": "^4.1.5",
+    "latest-version": "^7.0.0",
+    "semver": "^7.3.7",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "oitq": "^3.0.23"
+  }
+}
